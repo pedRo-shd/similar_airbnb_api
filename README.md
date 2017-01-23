@@ -1,24 +1,16 @@
-# README
+# Project similar Airbnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### M1-Criando CRUD Properties
+  * Criando a estrutura de desenvolvimento do projeto com o Docker
+  * Criando nossa Api
+  * Incluindo o Rack Cors na Api
+  * Incluindo versionamento na Api
+  * Configurando a entrada e saída de Json da Api
+  * Entendendo nosso modelo de dados
+  * Incluindo as ferramentas de Testes
+  * Criando nosso primeiro CRUD (Properties) com testes
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### M2-Autenticação, Testes e Upload de Arquivos
+  * Autenticação
+  * Criando nosso Controller User e Properties + TDD (Test-Driven Development)
+  * Fazendo o Upload de imagens usando o Carrierwave + Carrierwave Base 64
