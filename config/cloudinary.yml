@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dylp14eib
+  api_key: '924826824659185'
+  api_secret: I8OmzAMwXN1RhH8T2O_vRzvc5Us
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dylp14eib
+  api_key: '924826824659185'
+  api_secret: I8OmzAMwXN1RhH8T2O_vRzvc5Us
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dylp14eib
+  api_key: '924826824659185'
+  api_secret: I8OmzAMwXN1RhH8T2O_vRzvc5Us
+  enhance_image_tag: true
+  static_image_support: false

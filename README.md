@@ -14,3 +14,10 @@
   * Autenticação
   * Criando nosso Controller User e Properties + TDD (Test-Driven Development)
   * Fazendo o Upload de imagens usando o Carrierwave + Carrierwave Base 64
+
+### M3-Cloudinary, Modelo de Dados, Geocoder, Wishlist e Pesquisas com o Elasticsearch
+  * Incluindo o Cloudinary
+  * Evoluindo Modelo de Dados
+  * Usando o Geocoder
+  * Criando nossa Wishlist
+  * Implementando a Pesquisa com Elasticsearch

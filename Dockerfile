@@ -1,9 +1,9 @@
 # Usa essa imagem para gerar nosso container
-FROM ruby:2.3-slim
+FROM ruby:2.3.0-slim
 
 # Instala nossas dependencias
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
-      build-essential nodejs libpq-dev imagemagick
+      build-essential nodejs libpq-dev
 
 # Seta nosso path
 ENV INSTALL_PATH /onebnb_api
