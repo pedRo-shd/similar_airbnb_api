@@ -21,3 +21,6 @@
   * Usando o Geocoder
   * Criando nossa Wishlist
   * Implementando a Pesquisa com Elasticsearch
+
+### M4-Evoluindo modelo de dados II
+  * Incluindo Models Comment, Complaiment, Message, Talk,
