@@ -19,7 +19,6 @@ class Api::V1::PropertiesController < ApplicationController
     # Caso não esteja sendo selecionado por página, pegamos a primeira
     page = params[:page] || 1
     # Filtra por status, presença de wifi, máquina de lavar e etc
-    # Faça você mesmo \o/
     conditions = {status: :active}
 
     # Realizamos a busca do ElasticSearch

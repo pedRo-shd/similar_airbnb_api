@@ -21,3 +21,10 @@
   * Usando o Geocoder
   * Criando nossa Wishlist
   * Implementando a Pesquisa com Elasticsearch
+
+### M4-Modelo de Dados II
+ * Evoluindo o modelo de dados 2
+ * Criando o sistema administrativo
+ * Incluindo Models + Enuns + Carrierwave
+ * Incluindo Login no sistema administrativo
+ * Customizando uma Gem para estilizar o Admin
