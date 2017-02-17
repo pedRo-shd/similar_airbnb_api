@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210122905) do
+ActiveRecord::Schema.define(version: 20170217123456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,8 +87,10 @@ ActiveRecord::Schema.define(version: 20170210122905) do
     t.integer  "status"
     t.integer  "facility_id"
     t.integer  "bathroom"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.decimal  "rating",             default: "0.0"
+    t.boolean  "priority"
     t.index ["address_id"], name: "index_properties_on_address_id", using: :btree
     t.index ["facility_id"], name: "index_properties_on_facility_id", using: :btree
     t.index ["user_id"], name: "index_properties_on_user_id", using: :btree
@@ -102,6 +104,7 @@ ActiveRecord::Schema.define(version: 20170210122905) do
     t.integer  "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.boolean  "evaluation"
   end
 
   create_table "talks", force: :cascade do |t|
@@ -135,6 +138,12 @@ ActiveRecord::Schema.define(version: 20170210122905) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.string   "photo"
+    t.integer  "address_id"
+    t.text     "description"
+    t.string   "phone"
+    t.integer  "gender"
+    t.date     "birthday"
+    t.index ["address_id"], name: "index_users_on_address_id", using: :btree
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
@@ -153,6 +162,7 @@ ActiveRecord::Schema.define(version: 20170210122905) do
   add_foreign_key "properties", "addresses"
   add_foreign_key "properties", "facilities"
   add_foreign_key "properties", "users"
+  add_foreign_key "users", "addresses"
   add_foreign_key "wishlists", "properties"
   add_foreign_key "wishlists", "users"
 end

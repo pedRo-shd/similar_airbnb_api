@@ -24,3 +24,10 @@
 
 ### M4-Evoluindo modelo de dados II (Completo)
   * Incluindo Models Comment, Complaiment, Message, Talk
+
+### M5-Auto Complete, Recebendo Avaliação, Edição Usuário, Devolvendo propriedades para Home
+  * Método para auto complete (Devolvendo as strings de busca) + Testes
+  * Método receber avaliação + Testes
+  * Método de edição de usuário + Testes
+  * Método show (current user) de usuário + Testes
+  * Devolver propriedades para Home (Baseado em Flag de prioridade)

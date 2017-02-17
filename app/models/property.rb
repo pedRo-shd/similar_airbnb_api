@@ -9,10 +9,18 @@ class Property < ApplicationRecord
   belongs_to :facility
   has_many :wishlists
   has_many :photos
+  has_many :reservation
+  # Associa aos comentários
+  has_many :comments
   searchkick
+  # Força a ter esses campos preenchidos para criar um Property
+ validates_presence_of :address, :facility, :user, :status, :price, :photos,
+                       :accommodation_type, :beds, :bedroom, :bathroom, :guest_max,
+                       :description
 
   def search_data
     {
+      name: name,
       status: status,
       address_country: address.country,
       address_city: address.city,
@@ -23,8 +31,12 @@ class Property < ApplicationRecord
       clothes_iron: facility.clothes_iron,
       towels: facility.towels,
       air_conditioning: facility.air_conditioning,
-      refrigerato: facility.refrigerator,
+      refrigerator: facility.refrigerator,
       heater: facility.heater
     }
+  end
+
+  def get_rating
+    self.rating.round
   end
 end
