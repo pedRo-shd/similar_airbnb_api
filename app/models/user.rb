@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   has_many :comments
   belongs_to :address
   has_many :reservations
+  has_many :talks
+  has_many :messages
 end

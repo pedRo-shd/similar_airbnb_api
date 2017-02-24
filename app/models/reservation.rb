@@ -2,6 +2,7 @@ class Reservation < ApplicationRecord
   enum status: [ :pending, :active, :finished, :paid, :canceled ]
   belongs_to :property
   belongs_to :user
+  has_many :talks
 
   # Força a ter esses campos preenchidos para criar um Reservation
   validates_presence_of :property, :user
@@ -20,6 +21,10 @@ class Reservation < ApplicationRecord
       # Seta o evaluation como true
       self.evaluation = true
       self.save!
+    end
+
+    def interval
+      (self.checkout_date - self.checkin_date).to_i
     end
   end
 end

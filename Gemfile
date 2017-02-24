@@ -14,6 +14,7 @@ gem 'mini_magick'
 gem 'cloudinary'
 gem 'geocoder'
 gem 'searchkick'
+gem 'will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'

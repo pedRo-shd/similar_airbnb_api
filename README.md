@@ -31,3 +31,8 @@
   * Método de edição de usuário + Testes
   * Método show (current user) de usuário + Testes
   * Devolver propriedades para Home (Baseado em Flag de prioridade)
+
+### M6-Criando os métodos do Chat
+  * Criando o Controller Talk e método para listar Talks + Testes
+  * Criando método para listar as Mensagens + Testes
+  * Criando método para criar Mensagens + Testes
