@@ -7,6 +7,10 @@ class Reservation < ApplicationRecord
   # Força a ter esses campos preenchidos para criar um Reservation
   validates_presence_of :property, :user
 
+  def interval
+    (self.checkout_date - self.checkin_date).to_i
+  end
+  
   def evaluate comment, new_rating
     Reservation.transaction do
       property = self.property
@@ -21,10 +25,6 @@ class Reservation < ApplicationRecord
       # Seta o evaluation como true
       self.evaluation = true
       self.save!
-    end
-
-    def interval
-      (self.checkout_date - self.checkin_date).to_i
     end
   end
 end
