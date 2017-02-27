@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::TalksController, type: :controller do
+
+
   describe "POST #create_message" do
     before do
       @user = create(:user)
@@ -57,7 +59,6 @@ RSpec.describe Api::V1::TalksController, type: :controller do
     end
 
     context "with invalid user" do
-
       before do
         request.headers.merge!(@auth_headers)
         @user2 = create(:user)
@@ -113,7 +114,22 @@ RSpec.describe Api::V1::TalksController, type: :controller do
         expect(reservation['id']).to eql(@reservation.id)
       end
     end
+
+    context "with valid params and zero reservations associated" do
+      before do
+        request.headers.merge!(@auth_headers)
+        @talk = create(:talk, user: @user, reservation: nil)
+        @message = create(:message, talk: @talk)
+      end
+
+      it "will return the right reservation" do
+        get :messages, id: @talk.id
+        reservation = JSON.parse(response.body)['talk']['reservation']
+        expect(reservation).to eql(nil)
+      end
+    end
   end
+
 
   describe "GET #index" do
     before do
@@ -121,6 +137,7 @@ RSpec.describe Api::V1::TalksController, type: :controller do
       @auth_headers = @user.create_new_auth_token
       request.env["HTTP_ACCEPT"] = 'application/json'
     end
+
 
     context "with valid params and 10 talks" do
 
