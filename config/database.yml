@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: onebnb_api_development
+  database: similar_airbnb_api_development
 
 test:
   <<: *default
-  database: onebnb_api_test
+  database: similar_airbnb_api_test
 
 production:
   <<: *default
-  database: onebnb_api_production
+  database: similar_airbnb_api_production

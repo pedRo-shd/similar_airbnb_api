@@ -28,7 +28,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - '.:/onebnb_api'
+      - '.:/similar_airbnb_api'
     env_file:
       - '.env'
     environment:
@@ -42,7 +42,7 @@ services:
   #   ports:
   #     - '28080:28080'
   #   volumes:
-  #     - '.:/onebnb_api'
+  #     - '.:/similar_airbnb_api'
   #   env_file:
   #     - '.env'
 

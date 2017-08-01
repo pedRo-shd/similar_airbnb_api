@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -qq -y --no-install-recommends \
       build-essential nodejs libpq-dev imagemagick
 
 # Seta nosso path
-ENV INSTALL_PATH /onebnb_api
+ENV INSTALL_PATH /similar_airbnb_api
 
 # Cria nosso diretório
 RUN mkdir -p $INSTALL_PATH
