@@ -7,10 +7,16 @@ class Reservation < ApplicationRecord
   # Força a ter esses campos preenchidos para criar um Reservation
   validates_presence_of :property, :user
 
+  before_action :set_pending_status
+
+  def set_pending_status
+    self.status ||= :pending
+  end
+
   def interval
     (self.checkout_date - self.checkin_date).to_i
   end
-  
+
   def evaluate comment, new_rating
     Reservation.transaction do
       property = self.property

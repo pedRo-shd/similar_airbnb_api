@@ -36,3 +36,9 @@
   * Criando o Controller Talk e método para listar Talks + Testes
   * Criando método para listar as Mensagens + Testes
   * Criando método para criar Mensagens + Testes
+
+### M7-Criando novas reservas de propriedades para usuários
+  * Criando nova reservation + Testes
+  * Devolvendo dados para popular tela de minhas viagens (próximas, anteriores, wishlist) + Testes
+  * Devolvendo lista de anúncios do User (Ordenado por reservations) + Testes
+  * Devolvendo lista de reservations de uma propriedade do User + Testes (Pendentes, Confirmadas e Passadas)
