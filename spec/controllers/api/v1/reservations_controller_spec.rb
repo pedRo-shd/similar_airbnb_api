@@ -36,7 +36,7 @@ RSpec.describe Api::V1::ReservationsController, type: :controller do
 
       # (Criar o teste) return a json with correspondents fields
     end
-
+  end
 
   describe "GET #evaluation" do
     before do

@@ -7,7 +7,7 @@ class Reservation < ApplicationRecord
   # Força a ter esses campos preenchidos para criar um Reservation
   validates_presence_of :property, :user
 
-  before_action :set_pending_status
+  before_create :set_pending_status
 
   def set_pending_status
     self.status ||= :pending
