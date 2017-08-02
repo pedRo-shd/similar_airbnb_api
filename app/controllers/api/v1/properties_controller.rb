@@ -13,22 +13,32 @@ class Api::V1::PropertiesController < ApplicationController
   def show
   end
 
-  # GET /api/v1/trips.json
-def trips
-  begin
-    @properties = {}
-    # Próximas
-    @properties[:next] = current_api_v1_user.reservations.where(status: :active).map {|r| r.property}
-    # Anteriores
-    @properties[:previous] = current_api_v1_user.reservations.where(status: :finished).map {|r| r.property}
-    # Pending
-    @properties[:pending] = current_api_v1_user.reservations.where(status: :pending).map {|r| r.property}
-    # Wishlist
-    @properties[:wishlist] = current_api_v1_user.wishlists.map {|w| w.property}
-  rescue Exception => errors
-    render json: errors, status: :unprocessable_entity
+  # GET /api/v1/my_properties
+  # GET /api/v1/my_properties.json
+  def my_properties
+    @api_v1_properties = current_api_v1_user.properties.
+                                      includes(:reservations).
+                                      order("reservations.created_at DESC")
+
+    render template: '/api/v1/properties/index', status: 200
   end
-end
+
+  # GET /api/v1/trips.json
+  def trips
+    begin
+      @properties = {}
+      # Próximas
+      @properties[:next] = current_api_v1_user.reservations.where(status: :active).map {|r| r.property}
+      # Anteriores
+      @properties[:previous] = current_api_v1_user.reservations.where(status: :finished).map {|r| r.property}
+      # Pending
+      @properties[:pending] = current_api_v1_user.reservations.where(status: :pending).map {|r| r.property}
+      # Wishlist
+      @properties[:wishlist] = current_api_v1_user.wishlists.map {|w| w.property}
+    rescue Exception => errors
+      render json: errors, status: :unprocessable_entity
+    end
+  end
 
     # GET /api/v1/autocomplete.json
   def autocomplete
