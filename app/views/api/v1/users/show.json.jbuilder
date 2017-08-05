@@ -1,4 +1,4 @@
-json.extract! @user, :id, :name, :email, :description, :phone, :gender, :birthday, :created_at, :updated_at
+json.extract! @user, :id, :name, :email, :description, :phone, :password, :password_confirmation, :gender, :birthday, :created_at, :updated_at
 
 json.address do
   # Devolve um endereço se o endereço existir
