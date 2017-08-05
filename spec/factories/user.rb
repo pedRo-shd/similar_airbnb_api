@@ -12,6 +12,7 @@ FactoryGirl.define do
    created_at   timestamp
    updated_at   timestamp
    password 'secret123'
+   password_confirmation 'secret123'
    description FFaker::Lorem.paragraph
    phone FFaker::PhoneNumber.phone_number
    birthday Time.now - 10.year

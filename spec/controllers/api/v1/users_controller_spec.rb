@@ -39,11 +39,13 @@ end
       request.env["HTTP_ACCEPT"] = 'application/json'
       # Aqui estamos preparando os atributos que serão atualizados no User
       @new_attributes = {
-                          name:        FFaker::Name.name,
-                          description: FFaker::Lorem.paragraph,
-                          phone:       FFaker::PhoneNumber.phone_number,
-                          birthday:    DateTime.new(2001,2,3),
-                          email:       FFaker::Internet.email
+                          name:                     FFaker::Name.name,
+                          description:              FFaker::Lorem.paragraph,
+                          phone:                    FFaker::PhoneNumber.phone_number,
+                          birthday:                 DateTime.new(2001,2,3),
+                          email:                    FFaker::Internet.email,
+                          password:                 'secret123',
+                          password_confirmation:    'secret123'
                         }
     end
 
@@ -54,14 +56,17 @@ end
       end
 
       it "updates the requested user" do
+        p @user
         put :update, params: {user: @new_attributes}
-        @user.reload
+        p @user.reload
         # Testa todos os atributos para ver se eles foram atualizados
         expect(@user.name).to eql(@new_attributes[:name])
         expect(@user.description).to eql(@new_attributes[:description])
         expect(@user.phone).to eql(@new_attributes[:phone])
         expect(@user.birthday).to eql(@new_attributes[:birthday])
         expect(@user.email).to eql(@new_attributes[:email])
+        expect(@user.password).to eql(@new_attributes[:password])
+        expect(@user.password_confirmation).to eql(@new_attributes[:password_confirmation])
       end
 
       it "updates the requested user with photo" do
